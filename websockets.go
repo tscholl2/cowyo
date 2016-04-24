@@ -40,21 +40,21 @@ func wshandler(w http.ResponseWriter, r *http.Request) {
 			panic(err)
 		}
 
+		var p WikiData
+		err = p.load(strings.ToLower(m.Title))
+		if err != nil {
+			panic(err)
+		}
 		if m.UpdateServer {
-			p := CowyoData{strings.ToLower(m.Title), m.TextData}
-			err := p.save()
+			err := p.save(m.TextData)
 			if err != nil {
 				panic(err)
 			}
+			m.TextData = "saved"
 		}
 		if m.UpdateClient {
-			p := CowyoData{strings.ToLower(m.Title), ""}
-			err := p.load()
-			if err != nil {
-				panic(err)
-			}
-			m.UpdateClient = len(m.TextData) != len(p.Text)
-			m.TextData = p.Text
+			m.UpdateClient = len(m.TextData) != len(p.CurrentText)
+			m.TextData = p.CurrentText
 		}
 		newMsg, err := json.Marshal(m)
 		if err != nil {

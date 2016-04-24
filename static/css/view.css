@@ -8,7 +8,7 @@
 
 .yue {
 font: 400 18px/1.62 "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
-color: #444443;
+color: #333334;
 }
 
 .windows .yue {
@@ -31,7 +31,9 @@ background-color: rgba(0,0,0,0.2);
 .yue h5,
 .yue h6 {
 font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", "SimSun", sans-serif;
-color: #222223;
+color: #333333;
+font-weight: 600;
+letter-spacing: -0.02em;
 }
 
 .yue h1 {
@@ -89,6 +91,7 @@ text-decoration-color: rgba(0, 0, 0, 0.4);
 color: #555;
 -moz-text-decoration-color: rgba(0, 0, 0, 0.6);
 text-decoration-color: rgba(0, 0, 0, 0.6);
+text-decoration: none;
 }
 
 .yue h1 a,
@@ -177,9 +180,6 @@ margin: 0 0 24px 6px;
 padding-left: 16px;
 }
 
-.yue ul {
-list-style-type: square;
-}
 
 .yue ol {
 list-style-type: decimal;
@@ -194,10 +194,6 @@ margin-bottom: 0.2em;
 margin-top: 0;
 margin-bottom: 0;
 margin-left: 14px;
-}
-
-.yue li ul {
-list-style-type: disc;
 }
 
 .yue li ul ul {
@@ -262,7 +258,7 @@ box-sizing: border-box;
 .yue td {
 text-align: left;
 padding: 4px 8px 4px 10px;
-border: 1px solid #dadada;
+border: 1px solid #c1c1bd;
 }
 
 .yue td {
@@ -270,7 +266,7 @@ vertical-align: top;
 }
 
 .yue tr:nth-child(even) {
-background-color: #efefee;
+background-color: #dadad8;
 }
 
 .yue iframe {
@@ -305,9 +301,16 @@ background: none;
 body {
 margin: 0;
 padding: 0.4em 1em 6em;
-background: #fff;
+background: #fdfdfd;
 }
 .yue {
-max-width: 650px;
+max-width: 800px;
 margin: 0 auto;
+}
+
+
+@media (min-width: 1200px) {
+.container{
+    max-width: 800px;
+}
 }
